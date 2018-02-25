@@ -9,18 +9,25 @@ import random
 
 import sqlite3
 
-def copy_players(soccer_cursor, G):
+def create_nodes(soccer_cursor, G):
     soccer_cursor.execute('''SELECT id FROM Player''')
 
     for row in soccer_cursor.fetchall():
         G.add_node(row[0])
 
 def create_edges(soccer_cursor, G):
-    soccer_cursor.execute('''SELECT id FROM Team''')
+    soccer_cursor.execute('''SELECT id FROM Team LIMIT 5''')
 
-    for row in soccer_cursor.fetchall():
+    teams = soccer_cursor.fetchall()
+
+    for row in teams:
         soccer_cursor.execute(''' SELECT player_id FROM History WHERE team_id=%s''' % row[0])
         players_same_team = soccer_cursor.fetchall()
+
+        for player in players_same_team:
+            if not G.has_node(player[0]):
+                G.add_node(player[0])
+
         for player1 in players_same_team:
             for player2 in players_same_team:
                 if(player1[0] != player2[0]):
@@ -31,10 +38,10 @@ soccer_cursor = soccer_db.cursor()
 
 G = nx.Graph()
 
-copy_players(soccer_cursor, G)
+# create_nodes(soccer_cursor, G)
 create_edges(soccer_cursor, G)
 
-pos = {i:(random.randint(0,50),random.randint(0,100)) for i in G.nodes()}
+pos = {i:(random.random()*1000,random.random()*1000) for i in G.nodes()}
 
 nx.set_node_attributes(G, pos, 'pos')
 
@@ -49,7 +56,7 @@ for n in pos:
         ncenter=n
         dmin=d
 
-p=nx.single_source_shortest_path_length(G,ncenter)
+# p=nx.single_source_shortest_path_length(G,ncenter)
 
 edge_trace = Scatter(
     x=[],
@@ -99,7 +106,7 @@ for node, adjacencies in G.adjacency():
 
 fig = Figure(data=Data([edge_trace, node_trace]),
              layout=Layout(
-                title='<br>Network graph made with Python',
+                title='<br>Soccer players that played together',
                 titlefont=dict(size=16),
                 showlegend=False,
                 hovermode='closest',
