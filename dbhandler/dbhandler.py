@@ -14,13 +14,38 @@ def create_db_tables(db_cursor):
                             player_id INTEGER REFERENCES Player(id))''')
 
 def copy_players(original_db_cursor, db_cursor):
-    original_db_cursor.execute('''SELECT player_api_id, player_name FROM Player''')
+    original_db_cursor.execute('''SELECT Player.player_api_id, Player.player_name FROM Match LEFT JOIN Player 
+                                    ON Match.home_player_1 = Player.player_api_id 
+									OR Match.home_player_2 = PLAYER.player_api_id
+									OR Match.home_player_3 = PLAYER.player_api_id
+									OR Match.home_player_4 = PLAYER.player_api_id
+									OR Match.home_player_5 = PLAYER.player_api_id
+									OR Match.home_player_6 = PLAYER.player_api_id
+									OR Match.home_player_7 = PLAYER.player_api_id
+									OR Match.home_player_8 = PLAYER.player_api_id
+									OR Match.home_player_9 = PLAYER.player_api_id
+									OR Match.home_player_10 = PLAYER.player_api_id
+									OR Match.home_player_11 = PLAYER.player_api_id
+									OR Match.away_player_1 = Player.player_api_id 
+									OR Match.away_player_2 = PLAYER.player_api_id
+									OR Match.away_player_3 = PLAYER.player_api_id
+									OR Match.away_player_4 = PLAYER.player_api_id
+									OR Match.away_player_5 = PLAYER.player_api_id
+									OR Match.away_player_6 = PLAYER.player_api_id
+									OR Match.away_player_7 = PLAYER.player_api_id
+									OR Match.away_player_8 = PLAYER.player_api_id
+									OR Match.away_player_9 = PLAYER.player_api_id
+									OR Match.away_player_10 = PLAYER.player_api_id
+									OR Match.away_player_11 = PLAYER.player_api_id
+									WHERE Match.league_id=17642 GROUP BY Player.player_api_id''')
 
     for row in original_db_cursor.fetchall():
-        db_cursor.execute('''INSERT INTO Player(id, name) VALUES(?,?)''', (row[0], row[1]))
+        if(row[0] and row[1]):
+            db_cursor.execute('''INSERT INTO Player(id, name) VALUES(?,?)''', (row[0], row[1].split(',')[0]))
 
 def copy_teams(original_db_cursor, db_cursor):
-    original_db_cursor.execute('''SELECT team_api_id, team_long_name FROM Team''')
+    original_db_cursor.execute('''SELECT Team.team_api_id, Team.team_long_name FROM Match LEFT JOIN Team 
+                                    ON Match.home_team_api_id = Team.team_api_id WHERE Match.league_id=17642 GROUP BY Team.team_api_id''')
 
     for row in original_db_cursor.fetchall():
         db_cursor.execute('''INSERT INTO Team(id, name) VALUES(?,?)''', (row[0], row[1]))
@@ -33,7 +58,7 @@ def create_players_history(original_db_cursor, db_cursor):
                                     away_player_1, away_player_2, away_player_3, away_player_4, away_player_5,
                                     away_player_6, away_player_7, away_player_8, away_player_9, away_player_10,
                                     away_player_11
-                                    From Match
+                                    From Match WHERE league_id=17642
                                 ''')
 
     for row in original_db_cursor.fetchall():
