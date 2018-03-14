@@ -3,7 +3,7 @@
 import sqlite3
 
 nodes_csv = open('../db/nodes.csv', 'w')
-nodes_csv.write('id, label\n')
+nodes_csv.write('id, label, teams\n')
 
 edges_csv = open('../db/edges.csv', 'w')
 edges_csv.write('source, target\n')
@@ -16,7 +16,11 @@ def create_nodes(soccer_cursor, nodes_csv):
 
     for row in soccer_cursor.fetchall():
         if(row[0] and row[1]):
-            nodes_csv.write('%s, %s\n' % (row[0],row[1]))
+            soccer_cursor.execute('''SELECT name from Team LEFT JOIN History ON History.team_id=Team.id WHERE player_id=%s''' % row[0])
+            teams = ""
+            for team in soccer_cursor.fetchall():
+                teams += team[0]
+            nodes_csv.write('%s, %s, %s\n' % (row[0],row[1],teams.replace(',','')))
 
 def create_edges(soccer_cursor, edges_csv):
     soccer_cursor.execute('''SELECT id FROM Team''')
