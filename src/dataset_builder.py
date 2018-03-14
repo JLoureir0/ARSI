@@ -2,6 +2,8 @@
 
 import sqlite3
 
+import hashlib
+
 def create_db_tables(db_cursor):
     db_cursor.execute('''DROP TABLE IF EXISTS Player''')
     db_cursor.execute('''CREATE TABLE Player(id INTEGER PRIMARY KEY, name TEXT)''')
@@ -10,7 +12,7 @@ def create_db_tables(db_cursor):
     db_cursor.execute('''CREATE TABLE Team(id INTEGER PRIMARY KEY, name TEXT)''')
 
     db_cursor.execute('''DROP TABLE IF EXISTS History''')
-    db_cursor.execute('''CREATE TABLE History(id INTEGER PRIMARY KEY, team_id INTEGER REFERENCES Team(id),
+    db_cursor.execute('''CREATE TABLE History(id TEXT PRIMARY KEY, team_id INTEGER REFERENCES Team(id),
                             player_id INTEGER REFERENCES Player(id))''')
 
 def copy_players(original_db_cursor, db_cursor):
@@ -64,9 +66,11 @@ def create_players_history(original_db_cursor, db_cursor):
     for row in original_db_cursor.fetchall():
         for x in range(11):
             if row[2+x] != None:
-                db_cursor.execute('''INSERT OR REPLACE INTO History(id, team_id, player_id) VALUES(?,?,?)''', (row[0]+row[2+x], row[0], row[2+x]))
+                id = str(row[0])+str(row[2+x])
+                db_cursor.execute('''INSERT OR REPLACE INTO History(id, team_id, player_id) VALUES(?,?,?)''', (hashlib.sha256(id.encode('utf-8')).hexdigest(), row[0], row[2+x]))
             if row[13+x] != None:
-                db_cursor.execute('''INSERT OR REPLACE INTO History(id, team_id, player_id) VALUES(?,?,?)''', (row[1]+row[13+x], row[1], row[13+x]))
+                id = str(row[1])+str(row[13+x])
+                db_cursor.execute('''INSERT OR REPLACE INTO History(id, team_id, player_id) VALUES(?,?,?)''', (hashlib.sha256(id.encode('utf-8')).hexdigest(), row[1], row[13+x]))
 
 original_soccer_db = sqlite3.connect("../db/soccer_original.sqlite")
 soccer_db = sqlite3.connect("../db/soccer.sqlite")
