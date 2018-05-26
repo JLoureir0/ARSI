@@ -229,11 +229,11 @@
 					<p class="justify">
 						In each iteration of the main process of FlowPro, the initial node
 						<b>propagates a flow</b>
-						<u>that is shared to its neighbors.</u>
+						<u>that is shared to its neighbours.</u>
 					</p>
 					<p class="justify">
 						Each node is able to
-						<b>store, propagate</b> to its neighbors and
+						<b>store, propagate</b> to its neighbours and
 						<b>return</b> a part of flow to the initial node.
 					</p>
 				</section>
@@ -255,16 +255,16 @@
 					<p class="justify">
 						The
 						<u>stored flow can be used as a belief</u> (rating) of a
-						<b>node to belong on the community</b> and to answer on several questions like find the k-nearest neighbors of the community
+						<b>node to belong on the community</b> and to answer on several questions like find the k-nearest neighbours of the community
 						of a node.
 					</p>
 				</section>
 				<section>
 					<ol>
 						<li class="fragment fade-up">Initial node $s$ propragates a flow.</li>
-						<li class="fragment fade-up">Flow is shared between neighbors according to the edge weights.</li>
+						<li class="fragment fade-up">Flow is shared between neighbours according to the edge weights.</li>
 						<li class="fragment fade-up">Each node that receives a flow stores half ($S(x)$) for itself.</li>
-						<li class="fragment fade-up">The other half of the flow ($T(x)$) is sent to its neighbors but only if the flow is greater than a threshold.</li>
+						<li class="fragment fade-up">The other half of the flow ($T(x)$) is sent to its neighbours but only if the flow is greater than a threshold.</li>
 					</ol>
 				</section>
 				<section>
@@ -292,13 +292,13 @@
 				</section>
 				<section>
 					<p class="justify">
-						The goal of the removal and the extension of neighbors of $s$ is:
+						The goal of the removal and the extension of neighbours of $s$ is:
 					</p>
 					<ul>
 						<li class="fragment fade-up">Decrease shortest paths between the nodes that belong on the community of s and s in order to be able to increase their
 							stored flow in the next iterations;</li>
 						<li class="fragment fade-up">Gradually keep the most of the flow to the nodes of the community by removing bridges;</li>
-						<li class="fragment fade-up">Keep the number of neighbors of s balanced.</li>
+						<li class="fragment fade-up">Keep the number of neighbours of s balanced.</li>
 					</ul>
 				</section>
 				<section>
