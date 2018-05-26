@@ -6,3 +6,4 @@ services:
       - "8000:8000"
     volumes:
       - ./paper_slides/index.html:/reveal.js/index.html
+      - ./paper_slides/media:/reveal.js/media

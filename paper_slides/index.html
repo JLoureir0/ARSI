@@ -1,113 +1,436 @@
-
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+	<title>ARSI - FlowPro</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="João Loureiro">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+	<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
-					</p>
-					<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=revealjscom" id="_carbonads_js"></script>
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-background="steelblue">
+				<div style="text-align: left; margin-bottom: 50px">
+					<img style="border: 0px; background: transparent; box-shadow: none; width: 426px; height: 140px;" src="media/Logo-FEUP.png">
+				</div>
+				<h6 style="margin-bottom: 75px">
+					<u>FlowPro</u>: A Flow Propagation Method for Single Community Detection
+				</h6>
+				<p style="margin-bottom: 100px">
+					Social Networks and Information Analysis
+				</p>
+				<p style="margin: 0px;">
+					<small>
+						João Loureiro
+					</small>
+				</p>
+				<span style="font-size:0.5em">
+					April 16, 2018
+				</span>
+			</section>
+			<section data-background="wheat">
+				<section data-background="media/community.jpg">
+					<h1 style="background: wheat; border: 3px solid black; color: #222;">
+						Communities
+					</h1>
 				</section>
-
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+					<p class="justify">
+						In the study of
+						<u>complex networks</u>, a network is said to have
+						<b>community structure</b>
+						if the nodes of the network can be
+						<b>easily grouped into</b>.
 					</p>
 				</section>
-
-				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
+					<p class="justify">
+						In this paper, it is used a
+						<u>propagation algorithm</u>
+						(FlowPro) that finds the
+						<b>community of a node</b> in a
+						<u>complex network
+						</u>.
+					</p>
+				</section>
+				<section>
+					<p style="text-align: left">
+						There are various applications for this algorithm:
+					</p>
+					<ul style="font-size: 0.9em">
+						<li class="fragment fade-up">Finding web communities;</li>
+						<li class="fragment fade-up">Detecting the structure of social networks;</li>
+						<li class="fragment fade-up">Enumerate attack vectors on a network;</li>
+						<li class="fragment fade-up">The community of a football player.</li>
+					</ul>
+				</section>
+			</section>
+			<section data-background="chocolate">
+				<section data-background="media/flow.jpg">
+					<h1 style="background: chocolate; border: 3px solid black; color: #222;">
+						Flowpro
+					</h1>
+				</section>
+				<section>
+					<p class="justify">
+						Most of the approaches found in the literature are
+						<b>centralized</b>,
+						<b>heuristic</b> without a global optimality criterion.
+					</p>
+					<p class="justify">
+						At the same time they require the
+						<b>entire graph structure</b> partitioning the entire given graph into
+						<u>overlapping or non-overlapping communities</u>.
+					</p>
+				</section>
+				<section>
+					<p class="justify">
+						On the contrary, FlowPro, proposes a local algorithm that can be implemented as a
+						<b>fully distributed method</b>
+						that solves the single community detection problem
+						<u>
+							<b>without</b> the knowledge of the entire graph structure</u>.
+					</p>
+				</section>
+				<section>
+					<p class="justify">
+						This makes possible the application of FlowPro in
+						<b>extremely large graphs</b>
+						or in cases where the
+						<b>entire graph is unknown</b>
+						<u>like in most social networks.</u>
+					</p>
+				</section>
+			</section>
+			<section data-background="indianred">
+				<section data-background="media/math.jpg">
+					<h1 class="fragment fade-up" style="background: indianred; border: 3px solid white; color: #222;">
+						Problem Formulation
+					</h1>
+				</section>
+				<section data-background="media/confused.gif" data-background-repeat="repeat" data-background-size="1000px">
+				</section>
+				<section>
+					<p style="background: white; border: 3px solid black; color: #222;">
 						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
+						<span class="fragment fade-up">$G \Rightarrow$ graph</span>
 						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+						<br>
+						<span class="fragment fade-up">$V \Rightarrow$ set of nodes</span>
+						<br>
+						<br>
+						<span class="fragment fade-up">$W \Rightarrow$ set of edge weights</span>
+						<br>
+						<br>
+						<span class="fragment fade-up">$$G=(V,W)$$</span>
+						<br>
+					</p>
 				</section>
-
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="https://slides.com" target="_blank">https://slides.com</a>.
+					<p style="background: white; border: 3px solid black; color: #222">
+						<br>
+						<span class="fragment fade-up">$$\text{node } i \in V; \text{ node } j \in V$$</span>
+						<br>
+						<span class="fragment fade-up">$W(i,j) \Rightarrow$ edge weight between $i$ and $j$</span>
+						<br>
+						<br>
+						<span class="fragment fade-up">$$W(i,j)=1 \lor W(i,j)=0$$</span>
+						<br>
 					</p>
 				</section>
-
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+					<p style="background: white; border: 3px solid black; color: #222">
+						<br>
+						<span class="fragment fade-up">$$s \in V \Rightarrow \text{initial node}$$</span>
+						<br>
+						<span class="fragment fade-up">$C(s) \Rightarrow$ set of nodes from $s$ community</span>
+						<br>
+						<br>
+						<span class="fragment fade-up">$$V \supseteq C(s) \supseteq s$$</span>
+						<br>
 					</p>
 				</section>
-
 				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+					<p style="background: white; border: 3px solid black; color: #222">
+						<br>
+						<span class="fragment fade-up">$$\text{node } x \in V$$</span>
+						<br>
+						<span class="fragment fade-up">$d(x) \Rightarrow$ shortest distance between $x$ and $s$</span>
+						<br>
+						<br>
+						<span class="fragment fade-up">$n(x) \Rightarrow$ neighbours of $x$</span>
+						<br>
+						<br>
 					</p>
 				</section>
+				<section>
+					<p style="background: white; border: 3px solid black; color: #222">
+						<br> $$\text{node } x \in V$$
+						<br>
+						<span class="fragment fade-up">$p(x) \Rightarrow$ probability that $x$ belongs on $C(s)$</span>
+						<br>
+						<br>
+						<span class="fragment fade-up">$\rho \Rightarrow$ average ratio of local links to node degree</span>
+						<br>
+						<br>
+					</p>
+				</section>
+				<section>
+					<p style="background: white; border: 3px solid black; color: #222">
+						<br> $$p(x) = \text{ ?}$$
+						<br>
+						<span class="fragment fade-up">$$p(x) = \rho^{-d(x)}$$</span>
+						<br>
+						<span class="fragment fade-up">$$p(x) \leq \frac{\sum_{y \in n(x)}p(y)}{|n(x)|}$$</span>
+						<br>
+					</p>
+				</section>
+				<section data-background="media/math.gif">
+				</section>
+			</section>
+			<section data-background="mediumseagreen">
+				<section data-background="media/iteration.gif">
+					<h1 class="fragment" style="background: mediumseagreen; border: 3px solid black; color: #222;">
+						Flow Propagation Algorithm
+					</h1>
+				</section>
+				<section>
+					<p class="justify">
+						In each iteration of the main process of FlowPro, the initial node
+						<b>propagates a flow</b>
+						<u>that is shared to its neighbors.</u>
+					</p>
+					<p class="justify">
+						Each node is able to
+						<b>store, propagate</b> to its neighbors and
+						<b>return</b> a part of flow to the initial node.
+					</p>
+				</section>
+				<section>
+					<p class="justify">
+						When the algorithm
+						<b>converges</b>, the
+						<b>stored flow</b> of the
+						<u>nodes that belong on the community</u> of the initial node is
+						<b>generally higher</b> than the
+						<b>stored flow</b> of
+						<u>the rest graph nodes</u> resulting in the requested community.
+					</p>
+				</section>
+				<section>
+					<p class="justify">
+						The $p(x)$ is analogous on stored flow of node $x$.
+					</p>
+					<p class="justify">
+						The
+						<u>stored flow can be used as a belief</u> (rating) of a
+						<b>node to belong on the community</b> and to answer on several questions like find the k-nearest neighbors of the community
+						of a node.
+					</p>
+				</section>
+				<section>
+					<ol>
+						<li class="fragment fade-up">Initial node $s$ propragates a flow.</li>
+						<li class="fragment fade-up">Flow is shared between neighbors according to the edge weights.</li>
+						<li class="fragment fade-up">Each node that receives a flow stores half ($S(x)$) for itself.</li>
+						<li class="fragment fade-up">The other half of the flow ($T(x)$) is sent to its neighbors but only if the flow is greater than a threshold.</li>
+					</ol>
+				</section>
+				<section>
+					<p class="justify">
+						The nodes that are
+						<b>closer</b> to $s$ will have
+						<b>high stored flow</b>.
+					</p>
+					<p class="justify">
+						In addition, it takes into account the graph structure in the sense that a node $x$ that have a lot of connections with nodes
+						of high stored flow, will receive also high quantity of flow ($S(x)$).
+					</p>
+				</section>
+				<section>
+					<img src="media/graphxy.png" alt="A simple example graph.">
+					<p class="justify">
+						The nodes $x$ and $y$ have the same distance from $s$ but $S(x) > S(y)$.
+						<br> So, the node $x$ belongs on $C(s)$ with higher probability than node $y$.
+					</p>
+				</section>
+				<section>
+					<p class="justify">
+						Based on low and high values of $S(x)$, edges are added or removed on $s$.
+					</p>
+				</section>
+				<section>
+					<p class="justify">
+						The goal of the removal and the extension of neighbors of $s$ is:
+					</p>
+					<ul>
+						<li class="fragment fade-up">Decrease shortest paths between the nodes that belong on the community of s and s in order to be able to increase their
+							stored flow in the next iterations;</li>
+						<li class="fragment fade-up">Gradually keep the most of the flow to the nodes of the community by removing bridges;</li>
+						<li class="fragment fade-up">Keep the number of neighbors of s balanced.</li>
+					</ul>
+				</section>
+				<section>
+					<ol start="5">
+						<li class="fragment fade-up">In the case that $S(x)$ is greater than $\sum(S(n(x)))$, we set it to $\sum(S(n(x)))$.</li>
+					</ol>
+					<br>
+					<br>
+					<p class="justify">
+						<span class="fragment fade-up">$$p(x) \leq \frac{\sum_{y \in n(x)}p(y)}{|n(x)|}$$</span>
+					</p>
+				</section>
+				<section>
+					<img src="media/graphg1g2.png" alt="An example graph with two almost full connected subgraphs G1 and G2">
+					<p class="justify">
+						There exist a bridge (edge: $s ∼ d$) and due to point 5 the reduction of $S(d)$ will be high.
+						<br> Without this step, $S(d)$ will be less but close to $S(a)$, $S(b)$ and $S(c)$.
+					</p>
+				</section>
+				<section>
+					<ol start="6">
+						<li class="fragment fade-up">We sort the vector of $S$'s in descending order and we compute the differences between adjacent elements of the sorted
+							vector named $DS$.</li>
+						<li class="fragment fade-up">Let $K$ be the position of global minimum of $DS$.</li>
+						<li class="fragment fade-up">The community of node $s$ is defined by the first $K$ nodes with highest $S(x)$.</li>
+					</ol>
+				</section>
+				<section>
+					<p class="justify">
+						The community finding algorithm converges to a solution (e.g. the last 10 iterations we receive the same community) or the
+						quantity $\frac{T(s)}{\sum_{x \in V} S(x)}$ is lower than a threshold meaning that $S(*)$ has been converged.
 
-				<section data-markdown>
-					<script type="text/template">
+					</p>
+				</section>
+				<section>
+					<img src="media/graphdetails.jpg" alt="An example graph with two almost full connected subgraphs G1 and G2">
+				</section>
+				<section>
+					<img src="media/flowpro.gif" alt="An example graph with two almost full connected subgraphs G1 and G2">
+				</section>
+			</section>
+			<section data-background="white">
+				<section>
+					<h1>
+						My Project
+					</h1>
+				</section>
+				<section>
+					<p class="justify">
+						Nodes $\Rightarrow$ football players.
+					</p>
+					<p class="justify">
+						Edges $\Rightarrow$ played for the same team.
+					</p>
+				</section>
+			</section>
+			<section>
+				<h1>Reveal.js</h1>
+				<h3>The HTML Presentation Framework</h3>
+				<p>
+					<small>Created by
+						<a href="http://hakim.se">Hakim El Hattab</a> and
+						<a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a>
+					</small>
+				</p>
+				<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=revealjscom"
+				 id="_carbonads_js"></script>
+			</section>
+
+			<section>
+				<h2>Hello There</h2>
+				<p>
+					reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of
+					what it can do.
+				</p>
+			</section>
+
+			<!-- Example of nested vertical slides -->
+			<section>
+				<section>
+					<h2>Vertical Slides</h2>
+					<p>Slides can be nested inside of each other.</p>
+					<p>Use the
+						<em>Space</em> key to navigate through all slides.</p>
+					<br>
+					<a href="#" class="navigate-down">
+						<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+					</a>
+				</section>
+				<section>
+					<h2>Basement Level 1</h2>
+					<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+				</section>
+				<section>
+					<h2>Basement Level 2</h2>
+					<p>That's it, time to go back up.</p>
+					<br>
+					<a href="#/2">
+						<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+					</a>
+				</section>
+			</section>
+
+			<section>
+				<h2>Slides</h2>
+				<p>
+					Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at
+					<a href="https://slides.com" target="_blank">https://slides.com</a>.
+				</p>
+			</section>
+
+			<section>
+				<h2>Point of View</h2>
+				<p>
+					Press
+					<strong>ESC</strong> to enter the slide overview.
+				</p>
+				<p>
+					Hold down alt and click on any element to zoom in on it using
+					<a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+				</p>
+			</section>
+
+			<section>
+				<h2>Touch Optimized</h2>
+				<p>
+					Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+				</p>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
 						## Markdown support
 
 						Write content using inline or external Markdown.
@@ -122,111 +445,125 @@
 						</section>
 						```
 					</script>
-				</section>
+			</section>
 
+			<section>
+				<section id="fragments">
+					<h2>Fragments</h2>
+					<p>Hit the next arrow...</p>
+					<p class="fragment">... to step through ...</p>
+					<p>
+						<span class="fragment">... a</span>
+						<span class="fragment">fragmented</span>
+						<span class="fragment">slide.</span>
+					</p>
+
+					<aside class="notes">
+						This slide has fragments which are also stepped through in the notes window.
+					</aside>
+				</section>
 				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
+					<h2>Fragment Styles</h2>
+					<p>There's different types of fragments, like:</p>
+					<p class="fragment grow">grow</p>
+					<p class="fragment shrink">shrink</p>
+					<p class="fragment fade-out">fade-out</p>
+					<p class="fragment fade-up">fade-up (also down, left and right!)</p>
+					<p class="fragment current-visible">current-visible</p>
+					<p>Highlight
+						<span class="fragment highlight-red">red</span>
+						<span class="fragment highlight-blue">blue</span>
+						<span class="fragment highlight-green">green</span>
 					</p>
 				</section>
+			</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
+			<section id="transitions">
+				<h2>Transition Styles</h2>
+				<p>
+					You can select from different transitions, like:
+					<br>
+					<a href="?transition=none#/transitions">None</a> -
+					<a href="?transition=fade#/transitions">Fade</a> -
+					<a href="?transition=slide#/transitions">Slide</a> -
+					<a href="?transition=convex#/transitions">Convex</a> -
+					<a href="?transition=concave#/transitions">Concave</a> -
+					<a href="?transition=zoom#/transitions">Zoom</a>
+				</p>
+			</section>
+
+			<section id="themes">
+				<h2>Themes</h2>
+				<p>
+					reveal.js comes with a few themes built in:
+					<br>
+					<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a>
+					<br>
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+				</p>
+			</section>
+
+			<section>
+				<section data-background="#dddddd">
+					<h2>Slide Backgrounds</h2>
 					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+						Set
+						<code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
 					</p>
+					<a href="#" class="navigate-down">
+						<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+					</a>
 				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
+				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+					<h2>Image Backgrounds</h2>
+					<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
 				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat"
+				 data-background-size="100px">
+					<h2>Tiled Backgrounds</h2>
+					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
 				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm"
+				 data-background-color="#000000">
+					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+						<h2>Video Backgrounds</h2>
+						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+					</div>
 				</section>
+				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+					<h2>... and GIFs!</h2>
+				</section>
+			</section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
+			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+				<h2>Background Transitions</h2>
+				<p>
+					Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+				</p>
+				<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+			</section>
+
+			<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+				<h2>Background Transitions</h2>
+				<p>
+					You can override background transitions per-slide.
+				</p>
+				<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+			</section>
+
+			<section>
+				<h2>Pretty Code</h2>
+				<pre><code class="hljs" data-trim contenteditable>
 function linkify( selector ) {
   if( supports3DTransforms ) {
 
@@ -242,273 +579,281 @@ function linkify( selector ) {
   }
 }
 					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+				<p>Code syntax highlighting courtesy of
+					<a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+			</section>
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+			<section>
+				<h2>Marvelous List</h2>
+				<ul>
+					<li>No order here</li>
+					<li>Or here</li>
+					<li>Or here</li>
+					<li>Or here</li>
+				</ul>
+			</section>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+			<section>
+				<h2>Fantastic Ordered List</h2>
+				<ol>
+					<li>One is smaller than...</li>
+					<li>Two is smaller than...</li>
+					<li>Three!</li>
+				</ol>
+			</section>
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+			<section>
+				<h2>Tabular Tables</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Item</th>
+							<th>Value</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Apples</td>
+							<td>$1</td>
+							<td>7</td>
+						</tr>
+						<tr>
+							<td>Lemonade</td>
+							<td>$2</td>
+							<td>18</td>
+						</tr>
+						<tr>
+							<td>Bread</td>
+							<td>$3</td>
+							<td>2</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+			<section>
+				<h2>Clever Quotes</h2>
+				<p>
+					These guys come in two forms, inline:
+					<q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
+				</p>
+				<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+					&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would reproduce
+					the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+				</blockquote>
+			</section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+			<section>
+				<h2>Intergalactic Interconnections</h2>
+				<p>
+					You can link between slides internally,
+					<a href="#/2/3">like this</a>.
+				</p>
+			</section>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
+			<section>
+				<h2>Speaker View</h2>
+				<p>There's a
+					<a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+				<p>Press the
+					<em>S</em> key to try it out.</p>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+				<aside class="notes">
+					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes
+					window (hit 's' on your keyboard).
+				</aside>
+			</section>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+			<section>
+				<h2>Export to PDF</h2>
+				<p>Presentations can be
+					<a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+				<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0"
+				 marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+			</section>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
+			<section>
+				<h2>Global State</h2>
+				<p>
+					Set
+					<code>data-state="something"</code> on a slide and
+					<code>"something"</code> will be added as a class to the document element when the slide is open. This lets you apply broader style changes,
+					like switching the page background.
+				</p>
+			</section>
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+			<section data-state="customevent">
+				<h2>State Events</h2>
+				<p>
+					Additionally custom events can be triggered on a per slide basis by binding to the
+					<code>data-state</code> name.
+				</p>
+				<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
 Reveal.addEventListener( 'customevent', function() {
 	console.log( '"customevent" has fired' );
 } );
 					</code></pre>
-				</section>
+			</section>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+			<section>
+				<h2>Take a Moment</h2>
+				<p>
+					Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting
+					slides off the screen.
+				</p>
+			</section>
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
+			<section>
+				<h2>Much more</h2>
+				<ul>
+					<li>Right-to-left support</li>
+					<li>
+						<a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a>
+					</li>
+					<li>
+						<a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a>
+					</li>
+					<li>
+						<a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a>
+					</li>
+					<li>
+						<a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a>
+					</li>
+				</ul>
+			</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="https://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
-			</div>
+			<section style="text-align: left;">
+				<h1>THE END</h1>
+				<p>
+					-
+					<a href="https://slides.com">Try the online editor</a>
+					<br> -
+					<a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+				</p>
+			</section>
 
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	</div>
 
-		<script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+	<script>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/search/search.js', async: true },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+			transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-		</script>
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/search/search.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/math/math.js', async: true }
+			]
+		});
 
-		<!-- Everything below this point is only used for the reveal.js demo page -->
+	</script>
 
-		<a class="fork-reveal" style="display: none;" href="https://github.com/hakimel/reveal.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork reveal.js on GitHub"></a>
+	<!-- Everything below this point Vis only used for the reveal.js demo page -->
+	<style>
+		/* Social sharing */
 
-		<div class="share-reveal" style="display: none; position: absolute; bottom: 16px; left: 50%; margin-left: -139px; z-index: 20;">
-			<a class="share-reveal-editor" href="https://slides.com">Try the online editor</a>
+		.justify {
+			text-align: justify;
+		}
 
-			<a class="share-reveal-facebook" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Frevealjs.com">
-				<svg viewBox="-8 -8 48 48" width="20" height="20" version="1.1" xmlns="http://www.w3.org/2000/svg">
-					<path fill="#FFFFFF" d="M25.613-4.557c0,0-3.707,0-6.166,0c-3.662,0-7.732,1.535-7.732,6.835c0.019,1.845,0,3.613,0,5.603H7.481 v6.728h4.366v19.37h8.021V14.48h5.295l0.479-6.618h-5.913c0,0,0.016-2.946,0-3.8c0-2.093,2.184-1.974,2.312-1.974 c1.042,0,3.059,0.003,3.578,0v-6.646H25.613z"/>
-				</svg>
-			</a>
+		.share-reveal a {
+			display: inline-block;
+			height: 34px;
+			line-height: 32px;
+			padding: 0 10px;
+			color: #fff;
+			font-family: Helvetica, sans-serif;
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 12px;
+			vertical-align: top;
+			text-transform: uppercase;
+			box-sizing: border-box;
+		}
 
-			<a class="share-reveal-twitter" href="http://twitter.com/share?url=http%3A%2F%2Frevealjs.com&text=reveal.js%20-%20The%20HTML%20presentation%20framework&via=revealjs&related=revealjs">
-				<svg viewbox="0 0 2000 1625.36" width="20" height="20" version="1.1" xmlns="http://www.w3.org/2000/svg">
-					<path d="m 1999.9999,192.4 c -73.58,32.64 -152.67,54.69 -235.66,64.61 84.7,-50.78 149.77,-131.19 180.41,-227.01 -79.29,47.03 -167.1,81.17 -260.57,99.57 C 1609.3399,49.82 1502.6999,0 1384.6799,0 c -226.6,0 -410.328,183.71 -410.328,410.31 0,32.16 3.628,63.48 10.625,93.51 -341.016,-17.11 -643.368,-180.47 -845.739,-428.72 -35.324,60.6 -55.5583,131.09 -55.5583,206.29 0,142.36 72.4373,267.95 182.5433,341.53 -67.262,-2.13 -130.535,-20.59 -185.8519,-51.32 -0.039,1.71 -0.039,3.42 -0.039,5.16 0,198.803 141.441,364.635 329.145,402.342 -34.426,9.375 -70.676,14.395 -108.098,14.395 -26.441,0 -52.145,-2.578 -77.203,-7.364 52.215,163.008 203.75,281.649 383.304,284.946 -140.429,110.062 -317.351,175.66 -509.5972,175.66 -33.1211,0 -65.7851,-1.949 -97.8828,-5.738 181.586,116.4176 397.27,184.359 628.988,184.359 754.732,0 1167.462,-625.238 1167.462,-1167.47 0,-17.79 -0.41,-35.48 -1.2,-53.08 80.1799,-57.86 149.7399,-130.12 204.7499,-212.41" style="fill:#ffffff"/>
-				</svg>
-			</a>
-		</div>
+		.share-reveal .share-reveal-editor {
+			line-height: 30px;
+		}
 
-		<style>
-			/* Social sharing */
-			.share-reveal a {
-				display: inline-block;
-				height: 34px;
-				line-height: 32px;
-				padding: 0 10px;
-				color: #fff;
-				font-family: Helvetica, sans-serif;
-				text-decoration: none;
-				font-weight: bold;
-				font-size: 12px;
-				vertical-align: top;
-				text-transform: uppercase;
-				box-sizing: border-box;
-			}
+		.share-reveal svg {
+			vertical-align: middle;
+		}
 
-			.share-reveal .share-reveal-editor {
-				line-height: 30px;
-			}
+		.share-reveal a+a {
+			margin-left: 10px;
+		}
 
-			.share-reveal svg {
-				vertical-align: middle;
-			}
+		.share-reveal-editor {
+			border: 2px solid #fff;
+		}
 
-			.share-reveal a + a {
-				margin-left: 10px;
-			}
+		.share-reveal-twitter,
+		.share-reveal-follow {
+			background-color: #00aced;
+		}
 
-			.share-reveal-editor {
-				border: 2px solid #fff;
-			}
+		.share-reveal-facebook {
+			background-color: #4B71B8;
+		}
 
-			.share-reveal-twitter,
-			.share-reveal-follow {
-				background-color: #00aced;
-			}
+		/* Advertising */
 
-			.share-reveal-facebook {
-				background-color: #4B71B8;
-			}
+		#carbonads {
+			width: 370px;
+			min-height: 100px;
+			font-size: 18px;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			padding: 10px;
+			margin: 40px auto 0 auto;
+			font-size: 16px;
+			z-index: 10;
+			text-align: left;
+		}
 
-			/* Advertising */
-			#carbonads {
-				width: 370px;
-				min-height: 100px;
-				font-size: 18px;
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				padding: 10px;
-				margin: 40px auto 0 auto;
-				font-size: 16px;
-				z-index: 10;
-				text-align: left;
-			}
+		#carbonads .carbon-img img {
+			float: left;
+			margin: 0 10px 0 0;
+			border: 0;
+			box-shadow: none;
+		}
 
-			#carbonads .carbon-img img {
-				float: left;
-				margin: 0 10px 0 0;
-				border: 0;
-				box-shadow: none;
-			}
+		#carbonads .carbon-poweredby {
+			display: block;
+			margin-top: 10px;
+			color: #aaa;
+		}
+	</style>
 
-			#carbonads .carbon-poweredby {
-				display: block;
-				margin-top: 10px;
-				color: #aaa;
-			}
-		</style>
-
-		<script>
+	<script>
 		var _gaq = [['_setAccount', 'UA-15240703-1'], ['_trackPageview']];
-		(function(d, t) {
-		var g = d.createElement(t),
-			s = d.getElementsByTagName(t)[0];
-		g.async = true;
-		g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g, s);
+		(function (d, t) {
+			var g = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+			g.async = true;
+			g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g, s);
 		})(document, 'script');
-		</script>
+	</script>
 
-		<script>
+	<!-- <script>
 			[].slice.call( document.querySelectorAll( '.share-reveal-facebook, .share-reveal-twitter' ) ).forEach( function( element ) {
 				element.addEventListener( 'click', function( event ) {
 					event.preventDefault();
@@ -523,7 +868,8 @@ Reveal.addEventListener( 'customevent', function() {
 				document.querySelector( '.share-reveal' ).style.display = 'block';
 				document.querySelector( '.fork-reveal' ).style.display = 'block';
 			}
-		</script>
+		</script> -->
 
-	</body>
+</body>
+
 </html>
