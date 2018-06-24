@@ -1,0 +1,16 @@
+version: "2"
+services:
+  paper_slides:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./paper_slides/index.html:/reveal.js/index.html
+      - ./paper_slides/media:/reveal.js/media
+  slides:
+    build: .
+    ports:
+      - "9000:8000"
+    volumes:
+      - ./slides/index.html:/reveal.js/index.html
+      - ./slides/media:/reveal.js/media
